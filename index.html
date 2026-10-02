@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>QRFlow — QR Code Designer</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            QR<span>Flow</span>
+        </div>
+
+        <div class="nav-links">
+            <a href="#generator">Generator</a>
+            <a href="#features">Features</a>
+            <a href="#how">How it works</a>
+        </div>
+
+        <a href="#generator" class="nav-button">
+            Create QR
+        </a>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-badge">
+            ✦ Free QR Code Designer
+        </div>
+
+        <h1>
+            Create a QR code<br>
+            <span>that looks like you.</span>
+        </h1>
+
+        <p>
+            Design beautiful, customizable QR codes
+            for your website, social media, business,
+            events and more.
+        </p>
+
+        <a href="#generator" class="hero-button">
+            Start Creating →
+        </a>
+
+    </section>
+
+
+    <!-- GENERATOR -->
+
+    <section class="generator-section" id="generator">
+
+        <div class="generator-card">
+
+
+            <!-- LEFT SIDE -->
+
+            <div class="controls">
+
+                <div class="section-label">
+                    QR CODE DESIGNER
+                </div>
+
+                <h2>
+                    Design your QR
+                </h2>
+
+                <p class="subtitle">
+                    Enter your content and customize
+                    the look of your QR code.
+                </p>
+
+
+                <!-- INPUT -->
+
+                <label class="input-label">
+                    Your content
+                </label>
+
+                <div class="input-box">
+
+                    <input
+                        id="qrInput"
+                        type="text"
+                        placeholder="https://youtube.com/@yourchannel"
+                    >
+
+                </div>
+
+
+                <!-- STYLE -->
+
+                <div class="control-title">
+                    QR Style
+                </div>
+
+                <div class="style-grid">
+
+                    <button
+                        class="style-option active"
+                        data-style="square">
+
+                        <div class="style-icon square-icon"></div>
+
+                        <span>Classic</span>
+
+                    </button>
+
+
+                    <button
+                        class="style-option"
+                        data-style="rounded">
+
+                        <div class="style-icon rounded-icon"></div>
+
+                        <span>Rounded</span>
+
+                    </button>
+
+
+                    <button
+                        class="style-option"
+                        data-style="dots">
+
+                        <div class="style-icon dots-icon"></div>
+
+                        <span>Dots</span>
+
+                    </button>
+
+
+                    <button
+                        class="style-option"
+                        data-style="soft">
+
+                        <div class="style-icon soft-icon"></div>
+
+                        <span>Soft</span>
+
+                    </button>
+
+
+                    <button
+                        class="style-option"
+                        data-style="bold">
+
+                        <div class="style-icon bold-icon"></div>
+
+                        <span>Classy</span>
+
+                    </button>
+
+
+                    <button
+                        class="style-option"
+                        data-style="minimal">
+
+                        <div class="style-icon minimal-icon"></div>
+
+                        <span>Modern</span>
+
+                    </button>
+
+                </div>
+
+
+                <!-- COLORS -->
+
+                <div class="control-title">
+                    Colors
+                </div>
+
+
+                <div class="color-controls">
+
+                    <div class="color-control">
+
+                        <label>
+                            QR Color
+                        </label>
+
+                        <div class="color-row">
+
+                            <input
+                                type="color"
+                                id="foregroundColor"
+                                value="#111827"
+                            >
+
+                            <span id="foregroundValue">
+                                #111827
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="color-control">
+
+                        <label>
+                            Background
+                        </label>
+
+                        <div class="color-row">
+
+                            <input
+                                type="color"
+                                id="backgroundColor"
+                                value="#FFFFFF"
+                            >
+
+                            <span id="backgroundValue">
+                                #FFFFFF
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRESETS -->
+
+                <div class="control-title">
+                    Color presets
+                </div>
+
+                <div class="presets">
+
+                    <button
+                        data-fg="#111827"
+                        data-bg="#FFFFFF"
+                        title="Classic">
+                    </button>
+
+                    <button
+                        data-fg="#2563EB"
+                        data-bg="#FFFFFF"
+                        title="Blue">
+                    </button>
+
+                    <button
+                        data-fg="#7C3AED"
+                        data-bg="#FFFFFF"
+                        title="Purple">
+                    </button>
+
+                    <button
+                        data-fg="#EC4899"
+                        data-bg="#FFFFFF"
+                        title="Pink">
+                    </button>
+
+                    <button
+                        data-fg="#059669"
+                        data-bg="#FFFFFF"
+                        title="Green">
+                    </button>
+
+                    <button
+                        data-fg="#F97316"
+                        data-bg="#FFFFFF"
+                        title="Orange">
+                    </button>
+
+                    <button
+                        data-fg="#FFFFFF"
+                        data-bg="#111827"
+                        title="Dark">
+                    </button>
+
+                </div>
+
+
+                <!-- BUTTONS -->
+
+                <div class="action-buttons">
+
+                    <button
+                        id="generateButton"
+                        class="generate-button">
+
+                        Generate QR
+
+                    </button>
+
+                    <button
+                        id="clearButton"
+                        class="clear-button">
+
+                        Clear
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT SIDE -->
+
+            <div class="preview-area">
+
+                <div class="preview-label">
+                    LIVE PREVIEW
+                </div>
+
+                <div class="qr-preview">
+
+                    <div id="result">
+
+                        <div class="empty-preview">
+
+                            <div class="empty-icon">
+                                QR
+                            </div>
+
+                            <p>
+                                Enter your content<br>
+                                to generate your QR
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    id="downloadButton"
+                    class="download-button">
+
+                    ↓ Download PNG
+
+                </button>
+
+                <p class="download-note">
+                    High-quality PNG • Free to use
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FEATURES -->
+
+    <section
+        class="features-section"
+        id="features">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                WHY QRFlow
+            </div>
+
+            <h2>
+                More than just a QR generator.
+            </h2>
+
+            <p>
+                Create QR codes that match your
+                brand and your personality.
+            </p>
+
+        </div>
+
+
+        <div class="features-grid">
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    ✦
+                </div>
+
+                <h3>
+                    Beautiful designs
+                </h3>
+
+                <p>
+                    Choose different QR shapes
+                    and styles instead of boring
+                    default QR codes.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🎨
+                </div>
+
+                <h3>
+                    Custom colors
+                </h3>
+
+                <p>
+                    Pick your own QR and background
+                    colors to match your brand.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    ⚡
+                </div>
+
+                <h3>
+                    Instant generation
+                </h3>
+
+                <p>
+                    Your QR code is generated
+                    instantly in your browser.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    ↓
+                </div>
+
+                <h3>
+                    Free download
+                </h3>
+
+                <p>
+                    Download your finished QR
+                    code as a high-quality PNG.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- HOW IT WORKS -->
+
+    <section
+        class="how-section"
+        id="how">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                SIMPLE PROCESS
+            </div>
+
+            <h2>
+                Create it in three steps.
+            </h2>
+
+        </div>
+
+
+        <div class="steps">
+
+            <div class="step">
+
+                <div class="step-number">
+                    01
+                </div>
+
+                <h3>
+                    Enter your link
+                </h3>
+
+                <p>
+                    Add your website, YouTube,
+                    Instagram, WhatsApp or any text.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    02
+                </div>
+
+                <h3>
+                    Make it yours
+                </h3>
+
+                <p>
+                    Choose a QR style and
+                    customize the colors.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    03
+                </div>
+
+                <h3>
+                    Download
+                </h3>
+
+                <p>
+                    Download your QR code
+                    and start sharing it.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="logo">
+            QR<span>Flow</span>
+        </div>
+
+        <p>
+            Beautiful QR codes, made simple.
+        </p>
+
+        <p class="copyright">
+            © 2026 QRFlow. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- QR LIBRARY -->
+
+    <script src="https://unpkg.com/qr-code-styling/lib/qr-code-styling.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
